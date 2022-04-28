@@ -4,7 +4,7 @@
             <Job v-for="j in jobs" :key="j.id" :job="j" />
         </div>
     </div>
-    <button class="btn btn-primary fab rounded-circle" data-bs-toggle="modal" data-bs-target="#new-job-modal" title="Create Job Listing">➕</button>
+    <button v-if="account.id" class="btn btn-primary fab rounded-circle" data-bs-toggle="modal" data-bs-target="#new-job-modal" title="Create Job Listing">➕</button>
     <Modal id="new-job-modal">
         <template #modal-header-slot>
             <h4>New Job Listing</h4>
@@ -41,9 +41,11 @@ export default
     {
         const jobs = computed(() => AppState.jobs);
         const job = computed(() => AppState.job);
+        const account = computed(() => AppState.account);
         return {
             jobs,
-            job
+            job,
+            account
         }
     }
 }

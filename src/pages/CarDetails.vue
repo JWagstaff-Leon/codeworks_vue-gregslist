@@ -6,7 +6,7 @@
                 <div class="col-8 offset-2">
                     <div class="d-flex flex-column align-items-center">
                         <img :src="car.imgUrl" />
-                        <div v-if="car.creatorId === account.id" class="d-flex justify-content-between">
+                        <div v-if="car.creatorID === account.id" class="d-flex justify-content-between">
                             <i class="mdi mdi-pencil selectable" data-bs-toggle="modal" data-bs-target="#edit-car-modal" ></i>
                             <i class="mdi mdi-delete selectable" @click="deleteCar()"></i>
                         </div>

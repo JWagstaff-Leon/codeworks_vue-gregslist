@@ -8,6 +8,6 @@ export class Job
         this.hours = data.hours;
         this.description = data.description;
         this.company = data.company;
-        this.creatorId = data.creatorId;
+        this.creatorID = data.creatorID;
     }
 }

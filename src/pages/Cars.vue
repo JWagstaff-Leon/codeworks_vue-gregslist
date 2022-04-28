@@ -4,7 +4,7 @@
             <Car v-for="c in cars" :key="c.id" :car="c" />
         </div>
     </div>
-    <button class="btn btn-primary fab rounded-circle" data-bs-toggle="modal" data-bs-target="#new-car-modal" title="Create Car Listing">➕</button>
+    <button v-if="account.id" class="btn btn-primary fab rounded-circle" data-bs-toggle="modal" data-bs-target="#new-car-modal" title="Create Car Listing">➕</button>
     <Modal id="new-car-modal">
         <template #modal-header-slot>
             <h4>New Car Listing</h4>
@@ -41,9 +41,11 @@ export default
     {
         const cars = computed(() => AppState.cars);
         const car = computed(() => AppState.car);
+        const account = computed(() => AppState.account);
         return {
             cars,
-            car
+            car,
+            account
         }
     }
 }

@@ -82,8 +82,8 @@ export default
                     }
                     else
                     {
-                        const res = await jobsService.addJob(editable.value);
-                        router.push({ name: "JobDetails", params: {id: res.data.id }})
+                        const newJob = await jobsService.addJob(editable.value);
+                        router.push({ name: "JobDetails", params: {id: newJob.id }})
                         Pop.toast("Job successfully created", "success");
                         Modal.getOrCreateInstance(document.getElementById("new-job-modal")).hide();
                     }

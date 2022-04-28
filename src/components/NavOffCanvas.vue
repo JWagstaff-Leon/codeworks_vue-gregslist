@@ -21,11 +21,12 @@ export default
 {
     setup()
     {
+        const router = useRouter();
         return {
             navigate(name)
             {
                 Offcanvas.getOrCreateInstance(document.getElementById("listings-menu")).hide()
-                useRouter().push({name})
+                router.push({name})
             }
         }
     }

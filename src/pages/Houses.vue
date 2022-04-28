@@ -4,7 +4,7 @@
             <House v-for="h in houses" :key="h.id" :house="h" />
         </div>
     </div>
-    <button class="btn btn-primary fab rounded-circle" data-bs-toggle="modal" data-bs-target="#new-house-modal" title="Create House Listing">➕</button>
+    <button v-if="account.id" class="btn btn-primary fab rounded-circle" data-bs-toggle="modal" data-bs-target="#new-house-modal" title="Create House Listing">➕</button>
     <Modal id="new-house-modal">
         <template #modal-header-slot>
             <h4>New House Listing</h4>
@@ -41,9 +41,11 @@ export default
     {
         const houses = computed(() => AppState.houses);
         const house = computed(() => AppState.house);
+        const account = computed(() => AppState.account);
         return {
             houses,
-            house
+            house,
+            account
         }
     }
 }
