@@ -10,5 +10,6 @@ export class House
         this.levels = data.levels;
         this.imgUrl = data.imgUrl;
         this.description = data.description;
+        this.creatorId = data.creatorId;
     }
 }

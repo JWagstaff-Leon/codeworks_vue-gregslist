@@ -7,31 +7,31 @@ class HousesService
 {
     async addHouse(newHouseData)
     {
-        const res = await api.post("houses", newHouseData);
+        const res = await api.post("api/houses", newHouseData);
         return res.data;
     }
 
     async getAllHouses()
     {
-        const res = await api.get("houses");
+        const res = await api.get("api/houses");
         AppState.houses = res.data.map(v => new House(v));
     }
 
     async getHouseById(id)
     {
-        const res = await api.get("houses/" + id);
+        const res = await api.get("api/houses/" + id);
         AppState.house = new House(res.data);
     }
 
     async editHouse(houseData)
     {
-        const res = await api.put("houses/" + houseData.id, houseData);
+        const res = await api.put("api/houses/" + houseData.id, houseData);
         AppState.house = new House(res.data);
     }
 
     async deleteHouse(id)
     {
-        await api.delete("houses/" + id);
+        await api.delete("api/houses/" + id);
     }
 }
 

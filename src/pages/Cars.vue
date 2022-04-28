@@ -19,6 +19,8 @@
 import { computed } from "@vue/runtime-core";
 import { carsService } from "../services/CarsService.js";
 import { AppState } from '../AppState.js';
+import { logger } from '../utils/Logger.js';
+import Pop from '../utils/Pop.js';
 export default
 {
     async mounted()

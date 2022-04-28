@@ -10,5 +10,6 @@ export class Car
         this.color = data.color;        
         this.description = data.description;
         this.imgUrl = data.imgUrl;
+        this.creatorId = data.creatorId;
     }
 }

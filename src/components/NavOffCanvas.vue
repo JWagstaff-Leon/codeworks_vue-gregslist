@@ -6,9 +6,9 @@
         </div>
         <div class="offcanvas-body p-0 mt-4">
             <ul class="list-group list-group-flush">
-                <router-link :to="{ name: 'Cars' }"><button class="list-group-item list-group-item-action" @click="navigate('Cars')">Afforable Cars</button></router-link>
-                <router-link :to="{ name: 'Houses' }"><button class="list-group-item list-group-item-action" @click="navigate('Houses')">Modern Homes</button></router-link>
-                <router-link :to="{ name: 'Jobs' }"><button class="list-group-item list-group-item-action" @click="navigate('Jobs')">Competitive Jobs</button></router-link>
+                <button class="list-group-item list-group-item-action" @click="navigate('Cars')">Afforable Cars</button>
+                <button class="list-group-item list-group-item-action" @click="navigate('Houses')">Modern Homes</button>
+                <button class="list-group-item list-group-item-action" @click="navigate('Jobs')">Competitive Jobs</button>
             </ul>
         </div>
     </div>

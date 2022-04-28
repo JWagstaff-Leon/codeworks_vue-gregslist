@@ -11,7 +11,7 @@
                             <h3>Making ${{job.rate}}/hour</h3>
                             <h5 class="fst-italic text-dark lighten-20 mt-0">{{job.hours}} hours/week</h5>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div v-if="job.creatorId === account.id" class="d-flex justify-content-between">
                             <i class="mdi mdi-pencil selectable" data-bs-toggle="modal" data-bs-target="#edit-job-modal" ></i>
                             <i class="mdi mdi-delete selectable" @click="deleteJob()"></i>
                         </div>
@@ -57,10 +57,12 @@ export default
     setup()
     {
         const job = computed(() => AppState.job);
+        const account = computed(() => AppState.account);
         const route = useRoute();
         const router = useRouter();
         return {
             job,
+            account,
             back()
             {
                 router.push({ name: "Jobs" });
